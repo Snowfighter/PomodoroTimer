@@ -18,6 +18,7 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [TimePickerHandlers](#TimePickerHandlers)
     - [startTimer()](#startTimer)
     - [stopTimer()](#stopTimer)
+    - [pauseTimer()](#pauseTimer)
 -   [TimePicker.js](#timePicker)
 -   [Credits](#credits)
 
@@ -195,7 +196,7 @@ startTimer = () => {
 
 ### stopTimer
 
-In `stopTimer()` function, which is used by the Pause button, I clear the interval (`clearInterval()` has the access to the same pool of IDs as the `setInterval()`)
+In `stopTimer()` function, which I use in the `decreaseTimer` function, I clear the interval (`clearInterval()` has the access to the same pool of IDs as the `setInterval()`)
 
 I also change the `state` variable `isOn` to false and console log, that the timer has stoped working. 
 
@@ -206,6 +207,20 @@ stopTimer = () => {
       isOn: false,
     }))
     console.log('STOP')
+  }
+```
+
+### pauseTimer
+
+`pauseTimer()` looks exactly like the `stopTimer()` except for the fact that I change only `activePauseButton` state variable to state. It is logical as the user only wants the Play button to be active, when the timer is paused.  
+
+```javascript
+ pauseTimer = () => {
+    clearInterval(this.interval)
+    console.log('STOP')
+    this.setState(prevState => ({
+      activePauseButton: false,
+    }))
   }
 ```
 
