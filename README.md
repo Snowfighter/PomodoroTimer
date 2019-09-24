@@ -152,6 +152,21 @@ Then I define two functions `WorkTimerCallback` and `RestTimerCallback` which re
   }
 ```
 
+In the `startTimer` function, which is executed when the user presses on the Play button, I first determine `color` for the Timer display text. If the Work timer is on (`isWorkon === true`, the text gets reddish color, alternatively, the text gets purple color.  
+
+```javascript
+startTimer = () => {
+    this.setState(prevState => ({
+      color: (prevState.isWorkOn) ? colorWork : colorRest,
+      time: (!prevState.isOn) ? ((prevState.isWorkOn) ? prevState.valueWorkTimer : prevState.valueRestTimer) : prevState.time,
+      isOn: true,
+      activePauseButton: true,
+    }))
+    this.interval = setInterval(this.decreaseTimer, 1000)
+    console.log('START')
+  }
+```
+
 ## TimePicker.js
 
 
