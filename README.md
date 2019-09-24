@@ -97,12 +97,41 @@ const styles = StyleSheet.create({
 
 I also predefined as global constants the colors for Work/Rest timers' text.
 
-- Work: ![#ED4C67](https://placehold.it/15/ED4C67/000000?text=+)
-- Rest: ![#D980FA](https://placehold.it/15/D980FA/000000?text=+)
+- Work: ![#ED4C67](https://placehold.it/20/ED4C67/000000?text=+)
+- Rest: ![#D980FA](https://placehold.it/20/D980FA/000000?text=+)
 
 ```javascript
 const colorWork = '#ED4C67' 
 const colorRest = '#D980FA'
+```
+
+Looking at `App` class, I first  defined some `state` variables.
+
+- `time` - current time
+- `start` - start time (depends on the type of the timer at hand)
+- `color` - initial color of the timer display text 
+- `valueWorkTimer` - value the user picks for the Work Timer through [TimePicker](./TimerPicker.js) component
+- `valueRestTimer` - value the user picks for the Rest Timer through [TimePicker](./TimerPicker.js) component
+- `isOn` - boolean var for checking if the App's timer is working
+- `isWorkOn` - boolean var for checking if Work Timer is on (set to true, because the App starts with the Work Timer)
+- `activePauseButton` - boolean var for checking if the user can press the Pause button
+
+
+```javascript
+export default class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state =  {
+      time: 0,
+      start: 0,
+      color: '#000000',
+      valueWorkTimer: 0,
+      valueRestTimer: 0,
+      isOn: false,
+      isWorkOn: true,
+      activePauseButton: false,
+    }
+  }
 ```
 
 ## TimePicker.js
