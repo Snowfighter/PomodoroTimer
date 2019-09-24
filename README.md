@@ -12,7 +12,6 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
 
 -   [Idea](#idea)
 -   [App.js](#app.js)
--   [Timer.js](#timer.js)
 -   [TimePicker.js](#timePicker.js)
 -   [Credits](#credits)
 
@@ -31,6 +30,8 @@ So my app needs the following components:
 So I have decided to implement the Logo, Timer Dsiplay, Play/Pause/Reset buttons in [App.js](./App.js) and the set up control in a separate [TimePicker](./TimerPicker.js) component, beacuse it is identical for both timers
 
 ## App.js
+
+I am using [Expo](https://github.com/expo/expo) 
 
 ## TimePicker.js
 
