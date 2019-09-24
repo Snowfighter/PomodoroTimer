@@ -11,13 +11,13 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
 ## Table of contents
 
 -   [Idea](#idea)
--   [App.js](#app.js)
+-   [App.js](#app)
     - [Imports](#imports)
     - [Styles](#styles)
     - [State](#state)
     - [TimePickerHandlers](#TimePickerHandlers)
     - [startTimer()](#startTimer)
--   [TimePicker.js](#timePicker.js)
+-   [TimePicker.js](#timePicker)
 -   [Credits](#credits)
 
 ## Idea
@@ -38,11 +38,11 @@ So I have decided to implement the Logo, Timer Dsiplay, Play/Pause/Reset buttons
     <img src='./media/expo_logo.png' alt='Expo' title='Expo' align='right' height='80'/>
 </a>
 
-## App.js
-
-### Imports
+## App
 
 I am using [Expo](https://github.com/expo/expo) as my developing tools for React Native as well as some of their pretty libraries. 
+
+### Imports
 
 So, in my main [App.js](./App.js) I first import some predefined and common components and also my own [TimePicker](./TimerPicker.js).
 
@@ -190,7 +190,7 @@ startTimer = () => {
   }
 ```
 
-## TimePicker.js
+## TimePicker
 
 
 ## Credits 
