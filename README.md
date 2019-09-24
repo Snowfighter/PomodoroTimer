@@ -46,6 +46,55 @@ import Constants from 'expo-constants'
 import TimePicker from './TimePicker.js'
 ```
 
+Then I make some styles using `StyleSheet.create()` function. I have not used all the definedd styles, so let me crarify things here.
+
+- `appContainer` - defines just the overall look of my App
+- `timerSetContainer` - is used for two [TimePicker](./TimerPicker.js) components and Play/Pause buttons
+- `imgActive` and `imgInactive` - used for Images of Play/Pause buttons
+- `touchButton` - used for Play/Pause button component itself
+
+```javascript
+const styles = StyleSheet.create({
+  appContainer: {
+    flex: 1, 
+    backgroundColor: '#fab1a0',
+  },
+  timerContainer: {
+    marginTop: "4%",
+  },
+  timerSetContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      marginTop: "10%",
+  },
+  imgActive: {
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    marginTop: Constants.statusBarHeight,
+  },
+  imgInactive: {
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    opacity: 0.2,
+    marginTop: Constants.statusBarHeight,
+  },
+  touchButton: {
+    alignSelf: 'center',
+    marginTop: "10%",
+    marginRight: 150, 
+    marginLeft: 150, 
+  },
+  timerPosition: {
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 50,
+  }
+})
+```
+
 ## TimePicker.js
 
 
