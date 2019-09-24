@@ -4,7 +4,7 @@
 
 As my 1st project in [React Native](https://facebook.github.io/react-native/) for [CS50 Mobile](https://courses.edx.org/courses/course-v1:HarvardX+CS50M+Mobile/course/) I had to implement a Pomodoro Technique Timer. Basically, you set a *Work* and *Rest* timer to some number of minutes and then the app switches between them while you work on a task. There are [multiple ways](https://en.wikipedia.org/wiki/Pomodoro_Technique) how you can mix the timers and use not just two, but I have decided to implement the basic one. 
 
-![](./media/screenshot.png | width=100)
+<img src='./media/screenshot.png' alt='Screenshot' height='100'/>
 
 ## Idea
 
