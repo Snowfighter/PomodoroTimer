@@ -320,6 +320,8 @@ render() {
 
 ## TimePicker
 
+Firstly, I'll look back at the `render` function in [App.js](./App.js)
+
 
 ## Credits 
 
