@@ -20,6 +20,8 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [stopTimer()](#stopTimer)
     - [pauseTimer()](#pauseTimer)
     - [resetTimer()](#resetTimer)
+    - [decreaseTimer()](#decreaseTimer)
+    - [displayTimer()](#displayTimer)
 -   [TimePicker.js](#timePicker)
 -   [Credits](#credits)
 
@@ -243,6 +245,42 @@ resetTimer = () => {
       activePauseButton: false,
     }))
     console.log('RESTART')
+  }
+```
+
+### decreaseTimer
+
+I'll now discuss the `decreaseTimer()` function that every second while the timer is working. 
+
+Firstly, it checks if the current time is 0 or less, meaning that it should stop. If it so, the function executes `stopTimer()` and makes a the iPhone vibrate for a second. It also changes the `isWorkOn` to the opposite value, so that the App could switch between Work and Rest timers. After doing that, `decreaseTimer()` starts the timer. 
+
+If the `time` is not 0 or less than that, `time` value decreases by 1 second and console logs "Working" message.
+
+```javascript
+decreaseTimer = () => {
+    if (this.state.time <= 0) {
+      this.stopTimer()
+      Vibration.vibrate(1000)
+      this.setState(prevState => ({
+        isWorkOn: !prevState.isWorkOn
+      }))
+      console.log(this.state.isWorkOn)
+      this.startTimer()
+    } else {
+      console.log('Working')
+      this.setState(prevState => ({
+        time: prevState.time - 1,
+      }))
+    }
+  }
+```
+### displayTimer
+
+```javascript
+displayTimer = (time) => {
+    let minutes = Math.floor(time / 60)
+    let seconds = time - minutes * 60
+    return minutes + ':'  + (seconds < 10 ? '0' : '') + seconds
   }
 ```
 
