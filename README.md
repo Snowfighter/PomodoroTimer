@@ -17,6 +17,7 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [State](#state)
     - [TimePickerHandlers](#TimePickerHandlers)
     - [startTimer()](#startTimer)
+    - [stopTimer()](#stopTimer)
 -   [TimePicker.js](#timePicker)
 -   [Credits](#credits)
 
@@ -175,7 +176,9 @@ I also assign **true** to the `isOn` variable beacause `startTimer` function mak
 
 By the way, the Pause button gets activated `activePauseButton: true` and the Play button becomes inactive, which is quite logical, as you only want to use Pause button, when the App is in a work mode. 
 
-`this.interval = setInterval(this.decreaseTimer, 1000)` executes a function `decreaseTimer` every second. I will discuss this function a bit later. 
+`this.interval = setInterval(this.decreaseTimer, 1000)` executes a function `decreaseTimer` every second and returns an `intervalID`. I will discuss this function a bit later. 
+
+I also console log, that the timer has started working.
 
 ```javascript
 startTimer = () => {
@@ -187,6 +190,22 @@ startTimer = () => {
     }))
     this.interval = setInterval(this.decreaseTimer, 1000)
     console.log('START')
+  }
+```
+
+### stopTimer
+
+In `stopTimer()` function, which is used by the Pause button, I clear the interval (`clearInterval()` has the access to the same pool of IDs as the `setInterval()`)
+
+I also change the `state` variable `isOn` to false and console log, that the timer has stoped working. 
+
+```javascript
+stopTimer = () => {
+    clearInterval(this.interval)
+    this.setState(prevState => ({
+      isOn: false,
+    }))
+    console.log('STOP')
   }
 ```
 
