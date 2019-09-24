@@ -35,7 +35,16 @@ So I have decided to implement the Logo, Timer Dsiplay, Play/Pause/Reset buttons
 
 ## App.js
 
-I am using [Expo](https://github.com/expo/expo) 
+I am using [Expo](https://github.com/expo/expo) as my developing tools for React Native as well as some of their pretty libraries. 
+
+So, in my main [App.js](./App.js) I first import some predefined and common components and also my own [TimePicker](./TimerPicker.js).
+
+```javascript
+import React from 'react'
+import {View, Text, Button, StyleSheet, Image, TouchableOpacity, Vibration} from 'react-native'
+import Constants from 'expo-constants'
+import TimePicker from './TimePicker.js'
+```
 
 ## TimePicker.js
 
