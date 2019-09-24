@@ -12,6 +12,15 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
 
 Before implementing the in React Native I took a pen and a piece of paper and made a little draft of the app. 
 
+So my app needs the following components: 
+
+-   Logo :tomato:
+-   Timer Display (Should change color, based on the timer type (*Work*/*Rest*))
+-   Some control for each timer to set it up
+-   Play/Pause button 
+-   Reset button 
+
+
 
 
 ## Table of contents
@@ -31,6 +40,6 @@ Before implementing the in React Native I took a pen and a piece of paper and ma
 
 ## Credits 
 
-<div>Icon of a cute Tomato was made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+<div>Icon of a cute Tomato and Pause Button was made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
-<div>Icon of an Alarm Clock was made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+<div>Icon of an Alarm Clock, Play Button was made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
