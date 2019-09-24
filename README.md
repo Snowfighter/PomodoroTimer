@@ -19,6 +19,7 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [startTimer()](#startTimer)
     - [stopTimer()](#stopTimer)
     - [pauseTimer()](#pauseTimer)
+    - [resetTimer()](#resetTimer)
 -   [TimePicker.js](#timePicker)
 -   [Credits](#credits)
 
@@ -212,7 +213,9 @@ stopTimer = () => {
 
 ### pauseTimer
 
-`pauseTimer()` looks exactly like the `stopTimer()` except for the fact that I change only `activePauseButton` state variable to state. It is logical as the user only wants the Play button to be active, when the timer is paused.  
+`pauseTimer()`, which is executed when th user presses the Pause button, looks exactly like the `stopTimer()` except for the fact that I change only `activePauseButton` state variable to state. It is logical as the user only wants the Play button to be active, when the timer is paused.  
+
+I also console log "STOP" message for error checking.
 
 ```javascript
  pauseTimer = () => {
@@ -221,6 +224,25 @@ stopTimer = () => {
     this.setState(prevState => ({
       activePauseButton: false,
     }))
+  }
+```
+### resetTimer 
+
+`resetTimer()` is executed when the user presses on the RESET button. It clears the interval and sets the state to its initial values.  
+
+I also console log "RESTART" message for error checking.
+
+```javascript
+resetTimer = () => {
+    clearInterval(this.interval)
+    this.setState(prevState => ({
+      time: 0,
+      color: '#000000',
+      isOn: false,
+      isWorkOn: true,
+      activePauseButton: false,
+    }))
+    console.log('RESTART')
   }
 ```
 
