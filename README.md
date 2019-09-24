@@ -15,8 +15,8 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [Imports](#imports)
     - [Styles](#styles)
     - [State](#state)
-    - [WorkTimerCallback/RestTimerCallback](#workTimerCallback/RestTimerCallback)
-    - [startTimer()](#startTimer())
+    - [TimePickerHandlers](#TimePickerHandlers)
+    - [startTimer()](#startTimer)
 -   [TimePicker.js](#timePicker.js)
 -   [Credits](#credits)
 
@@ -145,7 +145,7 @@ export default class App extends React.Component {
   }
 ```
 
-### WorkTimerCallback/RestTimerCallback
+### TimePickerHandlers
 
 Then I define two functions `WorkTimerCallback` and `RestTimerCallback` which receive a value from a [TimePicker](./TimerPicker.js) component (minutes) and assign it to the proper `state` variable converted into seconds. I also concole log the values for error checking.
 
@@ -165,7 +165,7 @@ Then I define two functions `WorkTimerCallback` and `RestTimerCallback` which re
   }
 ```
 
-### startTimer()
+### startTimer
 
 In the `startTimer` function, which is executed when the user presses on the Play button, I first determine `color` for the Timer display text. If the Work timer is on (`isWorkOn === true`, the text gets reddish color `colorWork`, alternatively, the text gets purple color `colorRest`.  
 
