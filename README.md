@@ -26,11 +26,11 @@ So my app needs the following components:
 -   Timer Display (Should change color, based on the timer type (*Work*/*Rest*))
 -   Some control for each timer to set it up
 -   Play/Pause button 
--   Reset button    
+-   Reset button
+
+So I have decided to implement the Logo, Timer Dsiplay, Play/Pause/Reset buttons in [App.js](./App.js) and the set up control in a separate [TimePicker](./TimerPicker.js) component, beacuse it is identical for both timers
 
 ## App.js
-
-## Timer.js
 
 ## TimePicker.js
 
