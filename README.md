@@ -8,6 +8,14 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     <img src='./media/screenshot.png' alt='Screenshot' height='700'/>
 </p>
 
+## Table of contents
+
+-   [Idea](#idea)
+-   [App.js](#app.js)
+-   [Timer.js](#timer.js)
+-   [TimePicker.js](#timePicker.js)
+-   [Credits](#credits)
+
 ## Idea
 
 Before implementing the in React Native I took a pen and a piece of paper and made a little draft of the app. 
@@ -18,18 +26,7 @@ So my app needs the following components:
 -   Timer Display (Should change color, based on the timer type (*Work*/*Rest*))
 -   Some control for each timer to set it up
 -   Play/Pause button 
--   Reset button 
-
-
-
-
-## Table of contents
-
--   [Idea](#idea)
--   [App.js](#app.js)
--   [Timer.js](#timer.js)
--   [TimePicker.js](#timePicker.js)
--   [Credits](#credits)   
+-   Reset button    
 
 ## App.js
 
