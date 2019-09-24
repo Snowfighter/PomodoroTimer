@@ -95,6 +95,13 @@ const styles = StyleSheet.create({
 })
 ```
 
+I also predefined as global constants the colors for Work/Rest timers' text.
+
+```javascript
+const colorWork = '#ED4C67'
+const colorRest = '#D980FA'
+```
+
 ## TimePicker.js
 
 
