@@ -288,6 +288,10 @@ displayTimer = (time) => {
 
 ### render
 
+In this function I render all the components I want on my screen with styles. 
+
+Pause/Play buttons are implemented as `TouchableOpacity` components, where their `style` attribute is defined based on `activePauseButton` value.
+
 ```javascript
 render() {
     return (
