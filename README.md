@@ -12,6 +12,11 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
 
 -   [Idea](#idea)
 -   [App.js](#app.js)
+    - [Imports](#imports)
+    - [Styles](#styles)
+    - [State](#state)
+    - [WorkTimerCallback/RestTimerCallback](#workTimerCallback/RestTimerCallback)
+    - [startTimer()](#startTimer())
 -   [TimePicker.js](#timePicker.js)
 -   [Credits](#credits)
 
@@ -35,6 +40,8 @@ So I have decided to implement the Logo, Timer Dsiplay, Play/Pause/Reset buttons
 
 ## App.js
 
+### Imports
+
 I am using [Expo](https://github.com/expo/expo) as my developing tools for React Native as well as some of their pretty libraries. 
 
 So, in my main [App.js](./App.js) I first import some predefined and common components and also my own [TimePicker](./TimerPicker.js).
@@ -45,6 +52,8 @@ import {View, Text, Button, StyleSheet, Image, TouchableOpacity, Vibration} from
 import Constants from 'expo-constants'
 import TimePicker from './TimePicker.js'
 ```
+
+### Styles
 
 Then I make some styles using `StyleSheet.create()` function. I have not used all the definedd styles, so let me crarify things here.
 
@@ -105,6 +114,8 @@ const colorWork = '#ED4C67'
 const colorRest = '#D980FA'
 ```
 
+### State
+
 Looking at `App` class, I first  defined some `state` variables.
 
 - `time` - current time
@@ -134,6 +145,8 @@ export default class App extends React.Component {
   }
 ```
 
+### WorkTimerCallback/RestTimerCallback
+
 Then I define two functions `WorkTimerCallback` and `RestTimerCallback` which receive a value from a [TimePicker](./TimerPicker.js) component (minutes) and assign it to the proper `state` variable converted into seconds. I also concole log the values for error checking.
 
 ```javascript
@@ -152,7 +165,17 @@ Then I define two functions `WorkTimerCallback` and `RestTimerCallback` which re
   }
 ```
 
-In the `startTimer` function, which is executed when the user presses on the Play button, I first determine `color` for the Timer display text. If the Work timer is on (`isWorkon === true`, the text gets reddish color, alternatively, the text gets purple color.  
+### startTimer()
+
+In the `startTimer` function, which is executed when the user presses on the Play button, I first determine `color` for the Timer display text. If the Work timer is on (`isWorkOn === true`, the text gets reddish color `colorWork`, alternatively, the text gets purple color `colorRest`.  
+
+Then I assign the right current `time`. If the App is off (timers are not working, i.e. `isOn === true`), then the `time` needs to get either the initial Work timer value `valueWorkTimer` or Rest timer value `valueRestTimer`. This choice is made using `isWorkOn` variable. In case App is on `time` variable does not change. 
+
+I also assign **true** to the `isOn` variable beacause `startTimer` function makes the whole App work.
+
+By the way, the Pause button gets activated `activePauseButton: true` and the Play button becomes inactive, which is quite logical, as you only want to use Pause button, when the App is in a work mode. 
+
+`this.interval = setInterval(this.decreaseTimer, 1000)` executes a function `decreaseTimer` every second. I will discuss this function a bit later. 
 
 ```javascript
 startTimer = () => {
