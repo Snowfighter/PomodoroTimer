@@ -97,8 +97,11 @@ const styles = StyleSheet.create({
 
 I also predefined as global constants the colors for Work/Rest timers' text.
 
+- Work: ![#ED4C67](https://placehold.it/15/ED4C67/000000?text=+)
+- Rest: ![#D980FA](https://placehold.it/15/D980FA/000000?text=+)
+
 ```javascript
-const colorWork = '#ED4C67'
+const colorWork = '#ED4C67' 
 const colorRest = '#D980FA'
 ```
 
