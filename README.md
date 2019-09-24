@@ -29,6 +29,10 @@ So my app needs the following components:
 
 So I have decided to implement the Logo, Timer Dsiplay, Play/Pause/Reset buttons in [App.js](./App.js) and the set up control in a separate [TimePicker](./TimerPicker.js) component, beacuse it is identical for both timers
 
+<a href='https://expo.io'>
+    <img src='./media/expo_logo.png' alt='Expo' title='Expo' align='right' height='80'/>
+</a>
+
 ## App.js
 
 I am using [Expo](https://github.com/expo/expo) 
