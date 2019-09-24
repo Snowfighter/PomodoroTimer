@@ -1,3 +1,3 @@
 # PomodoroTimer
 
-CS50 Mobile 2nd Project, a timer to track work/rest periods
+CS50 Mobile 1st Project, a timer to track work/rest periods
