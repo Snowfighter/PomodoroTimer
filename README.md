@@ -320,7 +320,63 @@ render() {
 
 ## TimePicker
 
-Firstly, I'll look back at the `render` function in [App.js](./App.js)
+Firstly, I'll look back at the `render` function in [App.js](./App.js).
+
+### Propss
+
+```javascript
+<TimePicker color={colorWork} heading={'Work'} callback={this.WorkTimerCallback}/>
+<TimePicker color={colorRest} heading={'Rest'} callback={this.RestTimerCallback}/>
+```
+`TimePicker` component receives three props:
+
+- `color` - for headings
+- `heading` - title of the `TimePicker` ("Work" or "Rest")
+- `callback` - a function that receives a value that `TimePicker` outputs and assigns it either to `valueWorkTimer` or `valueRestTimer`.
+
+Now I'll discuss the component itself. 
+
+### Imports
+
+I import all common and standard components with the addition of a `NumericInput`, beacause the user only needs to provide a number of minutes for Work/Rest timers.
+
+```javascript
+import React from 'react'
+import {View, Text, StyleSheet} from 'react-native'
+import NumericInput from 'react-native-numeric-input'
+```
+
+### Styles
+
+Here I define just two simple styles.
+
+```javascript
+const styles = StyleSheet.create({
+    appContainer: {
+        alignItems: 'center',
+    },
+    head: {
+        fontSize: 50,
+    },
+})
+```
+
+### State
+
+In state I only save the number of minutes the user has choosen via the `NumericInput`.
+
+```javascript
+export default class TimePicker extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            minutes: 0
+        }
+    }
+```
+
+
+
 
 
 ## Credits 
