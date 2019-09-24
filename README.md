@@ -22,6 +22,7 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [resetTimer()](#resetTimer)
     - [decreaseTimer()](#decreaseTimer)
     - [displayTimer()](#displayTimer)
+    - [render()](#render)
 -   [TimePicker.js](#timePicker)
 -   [Credits](#credits)
 
