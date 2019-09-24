@@ -24,6 +24,11 @@ As my 1st project in [React Native](https://facebook.github.io/react-native/) fo
     - [displayTimer()](#displayTimer)
     - [render()](#render)
 -   [TimePicker.js](#timePicker)
+    - [Imports](#imports)
+    - [Styles](#styles)
+    - [State](#state)
+    - [render()](#render)
+    - [toParentFunction()](#toParentFunction)
 -   [Credits](#credits)
 
 ## Idea
@@ -322,7 +327,7 @@ render() {
 
 Firstly, I'll look back at the `render` function in [App.js](./App.js).
 
-### Propss
+### Props
 
 ```javascript
 <TimePicker color={colorWork} heading={'Work'} callback={this.WorkTimerCallback}/>
@@ -375,9 +380,42 @@ export default class TimePicker extends React.Component {
     }
 ```
 
+### render
 
+In this finction I render a `Text` component with the text and color from the `heading` and `color` props.
 
+I also render a `NumericInput` with some component's own props. The most intersting part is `onChange` prop. This prop takes a function that determines what to do with the value of the `NumericInput` every time the user changes it. In my case the value is passed to the  `toParentFunction`.
 
+```javascript
+ render() {
+        return(
+            <View style={styles.appContainer}>
+                <Text style={[styles.head, {color: this.props.color}]}>{this.props.heading}</Text>
+                <NumericInput
+                    value = {this.state.minutes}
+                    minValue={0}
+                    maxValue={60}
+                    totalHeight={80}
+                    rounded
+                    type='up-down'
+                    onChange={value => this.toParentFunction(value)}
+                />
+            </View>
+        )
+    }
+```
+
+### toParentFunction
+
+This function receives the value from the `NumericInput` and assigns to the `minutes` key in `state`. Then it calls from the props a `callback` function and passes the `NumericInput` value. As I have already described this `callback` function will assign the received value either to the Work or Rest timer as the starting one.
+
+```javascript
+ toParentFunction = (timePickerValue) => {
+        this.state.minutes = timePickerValue
+        this.props.callback(timePickerValue)
+        //console.log(this.state.minutes)
+ }
+```
 
 ## Credits 
 
