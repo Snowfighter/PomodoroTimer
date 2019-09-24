@@ -276,11 +276,40 @@ decreaseTimer = () => {
 ```
 ### displayTimer
 
+This function is used to render a pretty Timer display text with minutes and seconds and all the trailing zeros. 
+
 ```javascript
 displayTimer = (time) => {
     let minutes = Math.floor(time / 60)
     let seconds = time - minutes * 60
     return minutes + ':'  + (seconds < 10 ? '0' : '') + seconds
+  }
+```
+
+### render
+
+```javascript
+render() {
+    return (
+      <View style={styles.appContainer}>
+        <Image style={styles.imgActive} source={require('./img/tomato.png')}></Image>
+        <Text style={{fontSize: 50, alignSelf: 'center', color: this.state.color}}>{this.displayTimer(this.state.time)}</Text>
+        <Button onPress={this.resetTimer} title='RESET'/>
+        <View style={styles.timerSetContainer}>
+          <TimePicker color={colorWork} heading={'Work'} callback={this.WorkTimerCallback}/>
+          <TimePicker color={colorRest} heading={'Rest'} callback={this.RestTimerCallback}/>
+        </View>
+        <View style={styles.timerSetContainer}>
+        <TouchableOpacity onPress={this.pauseTimer} disabled={!this.state.activePauseButton} style={styles.touchButton}>
+          <Image style={this.state.activePauseButton ? styles.imgActive : styles.imgInactive} source={require('./img/pause-button.png')}></Image>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.startTimer} disabled={this.state.activePauseButton} style={styles.touchButton}>
+          <Image style={!this.state.activePauseButton ? styles.imgActive : styles.imgInactive} source={require('./img/play-button.png')}></Image>
+        </TouchableOpacity>
+        </View>
+
+      </View>
+    )
   }
 ```
 
