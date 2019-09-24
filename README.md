@@ -134,6 +134,24 @@ export default class App extends React.Component {
   }
 ```
 
+Then I define two functions `WorkTimerCallback` and `RestTimerCallback` which receive a value from a [TimePicker](./TimerPicker.js) component (minutes) and assign it to the proper `state` variable converted into seconds. I also concole log the values for error checking.
+
+```javascript
+  WorkTimerCallback = (dataFromTimerPicker) => {
+      this.setState(prevState => ({
+        valueWorkTimer: dataFromTimerPicker * 60,
+      }))
+      console.log(`Work: ${this.state.valueWorkTimer}`)
+  }
+
+  RestTimerCallback = (dataFromTimerPicker) => {
+    this.setState(prevState => ({
+      valueRestTimer: dataFromTimerPicker * 60,
+    }))
+    console.log(`Rest: ${this.state.valueRestTimer}`)
+  }
+```
+
 ## TimePicker.js
 
 
